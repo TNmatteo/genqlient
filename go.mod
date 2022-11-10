@@ -13,3 +13,5 @@ require (
 	golang.org/x/tools v0.1.10
 	gopkg.in/yaml.v2 v2.4.0
 )
+
+replace github.com/Khan/genqlient => github.com/TNMatteo/genqlient v0.0.0-20221110121625-bdc872b10a87

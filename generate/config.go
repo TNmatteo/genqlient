@@ -142,11 +142,15 @@ func (c *Config) ValidateAndFillDefaults(baseDir string) error {
 				}
 
 				for _, typ := range p.Scope().Names() {
+					fmt.Printf("OUT- %s\n", typ)
 					if token.IsExported(typ) {
 						// Check if type is manual bindings
+						fmt.Printf("MID- %s\n", typ)
 						_, exist := c.Bindings[typ]
 						if !exist {
+							fmt.Printf("IN- %s\n", typ)
 							pathType := fmt.Sprintf("%s.%s", p.Path(), typ)
+							fmt.Println(pathType)
 							c.Bindings[typ] = &TypeBinding{
 								Type: pathType,
 							}
